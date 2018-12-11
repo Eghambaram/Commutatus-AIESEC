@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { Observable } from "rxjs";
 
-import { Opportunities } from "../model/opportunities";
+// import { Opportunities } from "../model/opportunities";
 
 @Component({
   selector: "app-opportunities",
@@ -10,7 +10,7 @@ import { Opportunities } from "../model/opportunities";
   styleUrls: ["./opportunities.component.scss"]
 })
 export class OpportunitiesComponent implements OnInit {
-  opportunities$: Opportunities;
+  opportunities$: Object;
 
   constructor(private data: DataService) {}
 
