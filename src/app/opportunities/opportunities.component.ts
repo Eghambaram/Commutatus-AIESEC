@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./opportunities.component.scss"]
 })
 export class OpportunitiesComponent implements OnInit {
-  opportunities$: Object;
+  opportunities$: any;
 
   constructor(private data: DataService) {}
 

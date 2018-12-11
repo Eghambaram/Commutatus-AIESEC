@@ -9,9 +9,9 @@ import { Observable } from "rxjs";
   styleUrls: ["./opportunities-edit.component.scss"]
 })
 export class OpportunitiesEditComponent implements OnInit {
-  opportunities$: Object;
-  skills$: Object;
-  backgrounds$: Object;
+  opportunities$: any;
+  skills$: any;
+  backgrounds$: any;
   // submitted: boolean = false;
 
   constructor(private data: DataService) {}
