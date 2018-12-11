@@ -1,0 +1,160 @@
+<!-- Oppportunities Edit From -->
+<!-- Modal -->
+<div class="container d-flex h-100 align-items-center">
+  <div
+    style="width:80%;"
+    class="container align-items-center shadow-lg p-5 ml-5 mr-5 mt-5 mb-5 bg-white rounded"
+  >
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            placeholder="Enter title"
+            value="{{opportunities$.title}}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            rows="3"
+            value="{{opportunities$.description}}"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label for="applicationCloseDate">Application Close Date</label>
+
+              <input
+                type="date"
+                class="form-control"
+                [ngModel]="
+                  this.opportunities$.applications_close_date
+                    | date: 'yyyy-MM-dd'
+                "
+                readonly
+                name="applicationCloseDate"
+                placeholder="Application Close
+                    Date"
+              />
+            </div>
+            <div class="col">
+              <label for="earliestStartDate">Earliest Start Date</label>
+              <input
+                type="date"
+                [ngModel]="
+                  this.opportunities$.earliest_start_date | date: 'yyyy-MM-dd'
+                "
+                name="earliestStartDate"
+                class="form-control"
+                placeholder="Earliest Start Date"
+              />
+            </div>
+            <div class="col">
+              <label for="latestEndDate">Latest End Date</label>
+
+              <input
+                type="date"
+                [ngModel]="
+                  this.opportunities$.latest_end_date | date: 'yyyy-MM-dd'
+                "
+                name="latestEndDate"
+                class="form-control"
+                placeholder="Latest End Date"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="backgrounds">Backgrounds</label>
+          <select multiple="" class="form-control" id="backgrounds">
+            <!-- let background of opportunities$.backgrounds -->
+            <option
+              *ngFor="let background of backgrounds$"
+              [value]="background.name"
+              >{{ background.name }}</option
+            >
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="skils">Skils</label>
+          <select multiple="" class="form-control" id="skils">
+            <!-- let skill of opportunities$.skills -->
+            <option *ngFor="let skill of skills$" [value]="skill.name">{{
+              skill.name
+            }}</option>
+          </select>
+        </div>
+
+        <!--
+          <div class="form-group">
+            <label for="skils">Skils</label>
+            <select multiple="" class="form-control" id="skils">
+              let skill of opportunities$.skills
+              <option
+                *ngFor="let skill of opportunities$.skills"
+                [value]="skill.name"
+                >{{ skill.name }}</option
+              >
+            </select>
+          </div>
+        -->
+        <div class="form-group">
+          <label for="selectionProcess">Selection Process</label>
+          <input
+            type="text"
+            class="form-control"
+            id="selectionProcess"
+            placeholder="Selection Process"
+            value="{{ opportunities$.role_info.selection_process }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input
+            type="number"
+            class="form-control"
+            id="salary"
+            placeholder="Salary"
+            value="{{ opportunities$.specifics_info.salary }}"
+          />
+        </div>
+
+        <div class="form-group"><label for="location">Location</label></div>
+
+        <div class="form-group">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2646.216225729443!2d-89.2391164!3d48.45238070000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5921616d61c26b%3A0x15e5407d2071c8dd!2s109+Hogarth+St%2C+Thunder+Bay%2C+ON+P7A+7G8!5e0!3m2!1sen!2sca!4v1424371524427"
+            width="40%"
+            height="40%"
+            frameborder="0"
+            style="border:0"
+          ></iframe>
+        </div>
+        <a routerLink="/">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            Save &amp; Update
+          </button>
+        </a>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<!--
+  <div
+    class="alert alert-primary container d-flex h-100 align-items-center"
+    role="alert"
+  >
+    Opportunities updated successfully...
+    <a routerLink="OpportunitiesEdit" class="alert-link"
+      >click to navigate home</a
+    >
+    like.
+  </div>
+-->
